@@ -1,0 +1,30 @@
+{
+  "name": "ai-smart-music-player",
+  "version": "1.0.0",
+  "description": "Cloud-Based AI Smart Music Player with AWS S3, AWS Lambda, Groq AI, and Next.js",
+  "type": "module",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "download:samples": "node scripts/download-samples.js",
+    "s3:setup": "node scripts/setup-s3-cors.js",
+    "s3:upload": "node scripts/upload-to-s3.js",
+    "start:lambda": "node lambda/local-server.js",
+    "seed:catalog": "node scripts/seed-catalog.js"
+  },
+  "keywords": [
+    "music-player",
+    "aws-s3",
+    "aws-lambda",
+    "groq-ai",
+    "nextjs"
+  ],
+  "author": "Vanshika Chouthani",
+  "license": "MIT",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.750.0",
+    "@aws-sdk/s3-request-presigner": "^3.750.0",
+    "dotenv": "^16.4.7",
+    "groq-sdk": "^0.15.0"
+  }
+}

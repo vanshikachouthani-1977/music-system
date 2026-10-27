@@ -20,6 +20,11 @@ dist/
 .aws-sam/
 .serverless/
 
+# Audio files (Streamed from AWS S3 in production / kept local)
+*.mp3
+*.wav
+*.ogg
+
 # OS and IDE files
 .DS_Store
 Thumbs.db
