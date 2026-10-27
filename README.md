@@ -4,13 +4,39 @@ An AI-powered smart music streaming web application built with **Next.js**, **AW
 
 ---
 
+## 💡 Proposed Solution & Scope
+
+### 🎯 Core Features
+1. **Describe Your Mood**: 
+   - Natural language search bar (e.g., *"Late-night coding focus"*, *"Rainy day jazz"*).
+   - **Quick Vibe Chips** (`⚡ Cyberpunk Focus`, `🌧️ Rainy Lo-Fi`, `🏋️ High-BPM Workout`).
+   - **Smart Context**: Time-of-day awareness automatically suggesting appropriate music vibes.
+2. **AI Works Its Magic (Groq + AWS Lambda)**:
+   - Groq AI (Llama 3) analyzes user prompts and queries song metadata.
+   - **Energy Curve DJ Sequencing**: Builds tracklists that flow naturally (Warm-up ➔ Peak Focus ➔ Cooldown).
+   - Generates personalized AI DJ intro narrations.
+3. **Instant Cloud Streaming**:
+   - Audio tracks streamed directly from AWS S3 using secure presigned URLs.
+   - Real-time **Web Audio API visualizer** and reactive waveforms.
+   - Fast seek, crossfade, and zero-delay playback.
+
+---
+
+### 🚀 Future Scope
+- **Multi-User Synchronized Listening Rooms**: Listen together with friends in real-time.
+- **Synchronized LRC Lyrics**: Real-time karaoke-style scrolling lyrics.
+- **Automated S3 Audio Ingestion**: S3 event-triggered Lambda extracting ID3 metadata and auto-tagging songs via AI.
+- **Live Mood Shift**: A dynamic slider to seamlessly adjust the current playlist's energy level on the fly.
+
+---
+
 ## 🏗️ Architecture Overview
 
 ```
 User (Mood Prompt: "Late night focus")
           │
           ▼
-   Next.js Web App
+   Next.js Web App (Audio Visualizer & Player)
           │
           ▼  (POST /api/recommend)
    AWS Lambda Function
